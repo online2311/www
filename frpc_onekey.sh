@@ -74,11 +74,12 @@ config(){
 cat > frpc.ini <<EOF
 [common]
 server_addr = $IP
-server_port = 7000
+server_port = 443
 log_file = ./frpc.log
 log_level = info
 log_max_days = 3
 privilege_token = $password
+protocol = kcp
 
 
 [$SSH]
