@@ -57,6 +57,8 @@ config(){
     echo -n "."
     rm -f frpc.ini
     touch frpc.ini
+    HOST_IP=$(curl icanhazip.com)
+
     read -p  "请输入FRP服务端密码:[PassWord]" password
     if [ ! $password ] ;then
         password=PassWord
@@ -68,7 +70,6 @@ config(){
     read -p  "请输入本地IP:[127.0.0.1]" Local
     if [ ! $Local ] ;then
         Local=127.0.0.1
-    
     fi
      
 cat > frpc.ini <<EOF
@@ -78,12 +79,11 @@ server_port = 443
 log_file = ./frpc.log
 log_level = info
 log_max_days = 3
-privilege_token = $password
+token = $password
 protocol = kcp
 
 
-[$SSH]
-privilege_mode = true
+[$HOST_IP.SSH]
 type = tcp
 remote_port = 0
 local_ip = $Local
