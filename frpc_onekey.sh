@@ -81,9 +81,10 @@ log_level = info
 log_max_days = 3
 token = $password
 protocol = kcp
+user = $HOST_IP
 
 
-[$HOST_IP.SSH]
+[SSH]
 type = tcp
 remote_port = 0
 local_ip = $Local
