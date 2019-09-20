@@ -89,7 +89,8 @@ type = tcp
 remote_port = 0
 local_ip = $Local
 local_port = 22
-use_gzip = true use_encrypti
+use_gzip = true 
+use_encrypti = true
 EOF
  
 sudo cat > /etc/init.d/frp <<EOF
