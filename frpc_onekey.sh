@@ -43,7 +43,7 @@ cat << EOF
 欢迎使用FRP内网映射脚本
 =========================================================================
 版本更新：更新启动脚本功能
-客户端版本:0.20.0
+客户端版本:0.29.0
 =========================================================================
 USER: $USER   HOST: $HOSTNAME  KERNEL: `uname -r`  
 DISK :`ls  /dev/?d? 2>/dev/null`
@@ -63,9 +63,9 @@ config(){
     if [ ! $password ] ;then
         password=PassWord
     fi
-    read -p  "请输入FRP服务端域名:[47.105.54.145]" IP
+    read -p  "请输入FRP服务端域名:[123.56.189.53]" IP
     if [ ! $IP ] ;then
-        IP=47.105.54.145
+        IP=123.56.189.53
     fi
     read -p  "请输入本地IP:[127.0.0.1]" Local
     if [ ! $Local ] ;then
@@ -75,7 +75,7 @@ config(){
 cat > frpc.ini <<EOF
 [common]
 server_addr = $IP
-server_port = 443
+server_port = 53
 log_file = ./frpc.log
 log_level = info
 log_max_days = 3
@@ -155,25 +155,25 @@ EOF
         read -p "请输入序号:" key
         case $key in
             1)
-                download https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_386.tar.gz
+                download https://github.com/fatedier/frp/releases/download/v0.29.0/frp_0.29.0_linux_386.tar.gz
             ;;
             2)
-                download https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
+                download https://github.com/fatedier/frp/releases/download/v0.29.0/frp_0.29.0_linux_amd64.tar.gz
             ;;
             3)  
-                download https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_arm.tar.gz
+                download https://github.com/fatedier/frp/releases/download/v0.29.0/frp_0.29.0_linux_arm.tar.gz
             ;;
             4)
-                download https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_mips.tar.gz
+                download https://github.com/fatedier/frp/releases/download/v0.29.0/frp_0.29.0_linux_mips.tar.gz
             ;;
             5)
-                download https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_mips64.tar.gz
+                download https://github.com/fatedier/frp/releases/download/v0.29.0/frp_0.29.0_linux_mips64.tar.gz
             ;;
             6)
-                download https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_mipsle.tar.gz
+                download https://github.com/fatedier/frp/releases/download/v0.29.0/frp_0.29.0_linux_mipsle.tar.gz
             ;;
             7)
-                download https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_mips64le.tar.gz
+                download https://github.com/fatedier/frp/releases/download/v0.29.0/frp_0.29.0_linux_mips64le.tar.gz
             ;;
             8)
                 echo "OK"
